@@ -1,0 +1,126 @@
+GIT e GITHUB
+
+Comandos básicos de navegação dentro do terminal:
+Windows
+ - cd/ - Navega entre pastas
+ - dir - Lista diretórios contidos na pasta
+ - mkdir - Cria pasta
+ - del - deleta arquivos e arquivos contidos dentro de um diretório 
+ - rmdir - deleta um diretório
+ - cls - ClearScreen - Limpa a tela do terminal
+ - Tecla Tab - Completa o nome de arquivos ou diretórios
+ - echo - Printa uma frase e redireciona o output para um arquivo (caso não exista o arquivo o terminal cria este arquivo
+
+Unix
+ - cd/ - Navega entre pastas
+ - ls - Lista diretórios contidos na pasta
+ - mkdir - Cria pasta
+ - rm -rf - Deleta um diretório (rm)
+ - clear ou Ctrl+L - Limpa a tela do terminal
+ - echo - Printa uma frase e redireciona o output para um arquivo (caso não exista o arquivo o terminal cria este arquivo
+
+GIT
+
+SHA1 - Algoritmo de encriptação que gera um conjunto de 40 caracteres únicos - // é uma forma curta de representar um arquivo.
+
+Tema do GIT - Options -> Looks -> dracula
+
+Objetos do GIT
+	1. Blobs - Bolhas
+		-Contém metadados (então o sha1 pode ser diferente ao ser gerado, mas tem como trazer o valor sha1 original, sem o metadados do blob)
+	2. Trees - Árvores
+		-Também contém metadados (indica os blobs e os arquivos de texto)
+	3. Commits
+		-Objeto que junta tudo e dá sentido para o projeto
+		-Contém:
+			-tree
+			-parente
+			-autor
+			-mensagem
+			-timestamp (contém horário e data do objeto)
+			-também possuem sha1 e metadados
+
+Chave SSH e Token (Formas de autenticação)
+
+Chave SSH
+
+Forma segura de estabelecer uma conexão segura entre duas máquinas e contém duas chaves, uma pública e outra privada.
+
+Gerar a chave de conexão entre o GIT e GITHUB
+
+Acesse o GIT BASH e seguir as instruções abaixo
+	1.	Digite o seguinte comando no bash: 
+	ssh-keygen -t ed25519 -C digiteoemaildesuapreferencia@seuemail.com
+	2.	Ele irá informar o local onde salvará seu arquivo e, se você quiser, pode alterar o local digitando neste momento. Caso não, só aperte enter
+	3.	Digite uma senha e confirme a senha
+	4.	Em seguida, será gerado a chave.
+	5.	Para pegar a chave, vá no diretório onde se encontra a chave, através do bash, e digite o comando:
+	cat id_(+nome do arquivo da chave)
+	6. Para o GITHub, o certo é sempre informar a chave pública
+	7. Pegue a chave pública, copie e cole no GITHUB
+	
+	Inicializando o AgentSSH
+	a.	No bash, dentro da pasta da chave, digite o comando: 
+	eval $(ssh-agent -s)
+	b.	Será exibido o número do processo após isso (Ex.: Agent pid 126)
+	c.	Adicione a chave privada no SSH Agent através do comando: 
+	ssh-add id_(id da chave privada) e digite a senha
+	
+	Clonar repositórios do Github
+	a. Vá no repositório escolhido para clonar e clique em code
+	b. Em seguida, clique em SSH
+	c. Copie o código e vá no GIT e digite o comando: 
+	git clone (código copiado do github)
+	d. Digite yes
+	e. Repositório clonado.
+
+Local onde se encontra minha chave /c/Users/torre/.ssh/
+
+Token de acesso pessoal
+
+Github -> Developer settings -> Personal tokens -> Generate Token 
+
+Escolha as permissões para o token e o prazo de expiração
+
+Copie o token em um local seguro
+
+Para clonar repositórios, utilize o código HTTPS e a chave do Token no Bash
+
+Comandos GIT (para iniciar um repositório do GIT)
+1.	- git init
+		a. inicialize o bash no diretório que será criado o repositório
+		b. digite o comando -git init no bash
+		c. será criado uma pasta .git Para visualizar pastas ocultas no git, utilize a flag -a
+1.1 Configurar dados do git
+		a. E-mail
+			a. git config --global user.email (email com aspas)
+		b. Nome
+			a. git config --global user.name (nome sem aspas)
+2.	- git add (move o arquivo do untracked para staged)
+		a. Na pasta em que se encontra o conjunto de arquivos que será criado, utilize o comando: git add *
+	- git commit (move o arquivo do staged para unmodified)
+		a. utilize o comando git commit -m "mensagem inicial"
+2.1 Após realizar os passos acima, será criado o primeiro commit
+
+Github
+
+Criar repositório no GITHUB
+
+Usuário -> Perfil -> Repositories -> New repositorie
+
+Inserir nome do repositório, descrição, definir se irá iniciar o repositório com Readme (ou não) e clicar em criar repositório
+
+Enviar arquivos do Git ao Github
+
+Copiar link de repositorio do GITHUB
+
+Ir ao Git e digitar o comando
+
+git add remote origin (<-nome do Alias convencional, pode ser qualquer nome) e https//github.com/link-do-repositorio
+
+git remote -v (indica repositórios conectados)
+
+git pull origin master (baixa o repositório do github)
+
+git clone (url do github) (clona repositório do github)
+

@@ -1,0 +1,18 @@
+Lógica de programação
+
+Tags HTML
+
+<BR> - Brake - Quebra - Indica para o navegador que deve pular uma linha
+<h1> ~ </h1> - Heading - Destaque - Título da página
+<a href=""> ~ </a> - anchor - Ancora - Referencia links da web - Obs.: Necessário fazer um ref Ex.: href="www...com.br"
+<script> ~ </script> - chamada Javascript
+<meta charset="UTF-8"> - Habilita utilização de caracteres especiais e acentuação
+
+Instruções javascript 
+alert (" "); - abre um popup do javascript
+
+
+Observações de HTML
+-Estático (apenas exibe informações para o usuário)
+-Necessário usar outras linguagens para torná-lo dinâmico (o navegador entende outras linguagens)
+-Depurador: F12 ou Ctrl+Shift+C - informa erros do comando ou código
