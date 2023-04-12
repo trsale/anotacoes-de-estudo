@@ -9,10 +9,21 @@ Tags HTML
 <meta charset="UTF-8"> - Habilita utilização de caracteres especiais e acentuação
 
 Instruções javascript 
-alert (" "); - abre um popup do javascript
+alert(" "); - abre um popup do javascript
+document.write(" "); - exibe uma string ou um numeral (é possível realizar operações numéricas e até concatenar textos)
+math.round() - arredonda um número
+
+Declarar variável
+
+var nome_da_variavel = alguma_operacao_ou_texto
+*Para reatribuir um valor da variável não precisa usar o var
 
 
 Observações de HTML
 -Estático (apenas exibe informações para o usuário)
 -Necessário usar outras linguagens para torná-lo dinâmico (o navegador entende outras linguagens)
 -Depurador: F12 ou Ctrl+Shift+C - informa erros do comando ou código
+
+Convenções
+
+Variável com dois nomes = nomeNome
